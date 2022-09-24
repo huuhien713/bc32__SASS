@@ -1,0 +1,35 @@
+
+.button {
+    padding: 1.1em 1.5em;
+    border-radius: 50px;
+    border: 1px solid $primary-color;
+    overflow: hidden;
+    background-color: transparent;
+    box-shadow: 0 0 0 3em $primary-color inset;
+    transition: all 0.3s;
+    a {
+        display: block;
+        width: 100%;
+        color: #fff;
+        font-weight: 500;
+        text-decoration: none;  
+        i {
+            padding-right: 0.5em;
+        }
+    }
+    &:hover {
+        box-shadow: 0 0 0 1px $primary-color inset;
+    }
+    &:hover a {
+        color: $primary-color;
+    }
+}
+
+.button-2 {
+    @extend .button;
+    box-shadow: 0 0 0 3em #fff inset;
+    &:hover {
+        border: 1px solid #fff;
+        box-shadow: 0 0 0 1px transparent inset;
+    }
+}

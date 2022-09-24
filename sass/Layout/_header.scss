@@ -1,0 +1,474 @@
+.top__header {
+    position: absolute;
+    padding: 0 30px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    background-color: #fff;
+    transform: translateX(0);
+    z-index: 10;
+    display: none;
+    .nav__button {
+        display: block;
+        float: left;
+        width: 24px;
+        padding: 12px 0;
+        margin: 12px 0;
+        line-height: 48px;
+        // text-align: center;
+        span {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: $text-color;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+                width: 100%;
+                height: 2px;
+                margin-top: -8px;
+                background-color: $text-color;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+                width: 100%;
+                height: 2px;
+                background-color: $text-color;
+                margin-top : 8px;
+            }
+        }
+    }
+    .nav__logo {
+        transition: all 0.3s;
+        margin-left: 1em;
+        img {
+            width: 48px;
+            height: 48px;
+        }
+    }
+}
+.header {
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    height: 80px;
+    font-family: "Montserrat", sans-serif;
+    transform: translateX(0);
+    .container {
+        .nav {
+            @include d-flex;
+            &__logo {
+                img {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+            &__menu {
+                .nav__list {
+                    @include d-flex;
+                    list-style: none;
+                    font-size: 13px;
+                }
+                .nav__item {
+                    position: relative;
+                    margin-left: 50px;
+                    line-height: 80px;
+                    &.active::after {
+                        opacity: 1;
+                    }
+                    &:hover .nav__link {
+                        color: $primary-color;
+                    }
+                    &:hover::after {
+                        transform: translateX(-50%) scale(1.5, 1.5);
+                        opacity: 1;
+                    }
+                    &:hover .sub-menu {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                    &:hover .type-1 {
+                        transform: translateX(-45%) scale(1);
+                    }
+                    &:hover .type-2 {
+                        transform: scale(1);
+                    }
+                    &:hover .type-3 {
+                        transform: translateX(-62.5%) scale(1);
+                    }
+                    &:hover .type-4 {
+                        transform: translateX(-49%) scale(1);
+                    }
+                    &::after {
+                        content: "";
+                        display: block;
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50px;
+                        position: absolute;
+                        bottom: -5px;
+                        left: 50%;
+                        transform: translateX(-50%) scale(1);
+                        transition: all 0.3s;
+                        background-color: $primary-color;
+                        opacity: 0;
+                    }
+                    .nav__link {
+                        @include text;
+                        padding: 0;
+                    }
+                    .sub-menu {
+                        @include d-flex;
+                        position: absolute;
+                        top: 100%;
+                        left: 0%;
+                        transition: all 0.3s;
+                        list-style: none;
+                        width: 780px;
+                        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+                        background-color: #fff;
+                        opacity: 0;
+                        visibility: hidden;
+                        z-index: 1;
+                        .dropdown {
+                            font-size: 0.9em;
+                            width: 33.33%;
+                            a {
+                                @include text;
+                                display: block;
+                                width: 100%;
+                                line-height: 1.7;
+                                text-decoration: none;
+                                padding: 1em 1.5em 0 1.5em;
+                                &::after {
+                                    content: "";
+                                    display: block;
+                                    width: 100%;
+                                    height: 2px;
+                                    margin-top: 0.5em;
+                                    border-radius: 20px;
+                                    background-color: $primary-color;
+                                }
+                                &:hover {
+                                    color: $primary-color;
+                                }
+                                div {
+                                    width: 100%;
+                                }
+                            }
+                            .sub-menu-child {
+                                display: block;
+                                list-style: none;
+                                li {
+                                    width: 100%;
+                                    &:last-child {
+                                        a::after {
+                                            background-color: transparent;
+                                        }
+                                    }
+                                    a {
+                                        font-size: 1em;
+                                        padding: 1em 1.5em 0 1.5em;
+                                        transition: all 0.3s;
+                                        &::after {
+                                            content: "";
+                                            display: block;
+                                            width: 100%;
+                                            height: 1px;
+                                            margin-top: 1em;
+                                            border-radius: 20px;
+                                            background-color: rgba(0, 0, 0, 0.1);
+                                        }
+                                        &:hover {
+                                            color: $primary-color;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .type-1 {
+                        transform: translateX(-45%) scale(0.8);
+                    }
+                    .type-2 {
+                        display: block;
+                        width: 220px;
+                        transform: scale(0.8);
+                        left: 0%;
+
+                        .dropdown {
+                            width: 100%;
+
+                            &:last-child {
+                                a {
+                                    &::after {
+                                        background-color: transparent;
+                                    }
+                                }
+                            }
+
+                            a {
+                                &::after {
+                                    background-color: rgba(0, 0, 0, 0.1);
+                                }
+                            }
+                        }
+                    }
+                    .type-3 {
+                        @extend .type-2;
+                        text-align: right;
+                        transform: translateX(-62.5%) scale(0.8);
+                    }
+                    .type-4 {
+                        transform: translateX(-49%) scale(0.8);
+                        text-align: right;
+                    }
+                }
+                .nav-item-contact {
+                    font-size: 0.9rem;
+                    padding-left: 50px;
+                    line-height: 1;
+                    margin: 6px 5px;
+                }
+                .nav-item-social {
+                    a {
+                        color: $text-color;
+                        padding: 0;
+                        margin-left: 0.9em;
+                        transition: all 0.3s;
+
+                        i {
+                            font-size: 0.9rem;
+                        }
+
+                        &:hover {
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+            &__button {
+                @extend .nav__button;
+                display: none;
+            }
+        }
+    }
+}
+.scroll {
+    @extend .header;
+    position: fixed;
+    height: 48px;
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    .container {
+
+        .nav {
+            &__logo {
+                visibility: hidden;
+                img {
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+            &__menu {
+                .nav__item {
+                    line-height: 48px;
+                }
+                .nav-item-contact {
+                    .button {
+                        padding: 0.8em 1.5em;
+                    }
+                }
+            }
+        }
+    }
+}
+.sidebar-menu {
+    .top__header {
+        transform: translateX(320px);
+        transition: all 0.5s;
+        display: block;
+        .nav__button {
+            span {
+                height: 0;
+                &::before {
+                    margin-top: 0px;
+                    transform: rotate(45deg);
+                }
+                &::after {
+                    margin-top: 0px;
+                    transform: rotate(135deg);
+                }
+            }
+        }
+        .nav__logo {
+            opacity: 0;
+        }
+    }
+    .header {
+        position: fixed;
+        width: 320px;
+        height: 100vh;
+        padding: 0 30px;
+        overflow-y: scroll;
+        background-color: #fff;
+        .container {
+            padding: 0;
+            .nav {
+                display: block;
+                text-align: center;
+                .nav__logo {
+                    display: block;
+                    padding: 0 2em 1em;
+                    img {
+                        width: 90px;
+                        height: 90px;
+                    }
+                }
+                .nav__menu {
+                    padding-top: 13px;
+                    .nav__list {
+                        display: block;
+                        .nav__item {
+                            position: relative;
+                            width: 100%;
+                            line-height: 1.1;
+                            margin: 0;
+                            &::after {
+                                opacity: 0;
+                            }
+                            .nav__link {
+                                display: block;
+                                font-weight: 400;
+                                text-decoration: none;
+                                padding: 1em 2em;
+                                line-height: 1.1;
+                                &-icon-1 {
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
+                                    padding: 1em;
+                                    span {
+                                        display: block;
+                                        width: 8px;
+                                        height: 8px;
+                                        transform: rotate(135deg);
+                                        border-top: 1px solid $text-color;
+                                        border-right: 1px solid $text-color;
+                                    }
+                                }
+                            }
+                            .sub-menu {
+                                display: none;
+                                position: unset;
+                                width: 100%;
+                                opacity: 1;
+                                box-shadow: none;
+                                visibility: visible;
+                                .dropdown {
+                                    font-size: 0.9em;
+                                    width: 100%;
+                                    a {
+                                        display: block;
+                                        line-height: 1.1;
+                                        font-weight: 400;
+                                        padding: 0;
+                                        div {
+                                            padding: 1em 2em;
+                                            position: relative;
+                                        }
+                                        &::after {
+                                            height: 0;
+                                            width: 0;
+                                            margin: 0;
+                                        }
+                                    }
+                                    .sub-menu-child {
+                                        display: none;
+                                        opacity: 0.8;
+                                        li {
+                                            a {
+                                                display: block;
+                                                font-size: 0.9em;
+                                                font-weight: 400;
+                                                line-height: 1.1;
+                                                &::after {
+                                                    height: 0;
+                                                    width: 0;
+                                                    margin: 0;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .type-1, .type-2, .type-3, .type-4 {
+                                transform: none;
+                                text-align: center;
+                            }
+                            .type-1, .type-4 {
+                                .dropdown {
+                                    .sub-menu-title {
+                                        .nav__link-icon-2 {
+                                            position: absolute;
+                                            top: 0;
+                                            right: 0;
+                                            width: fit-content;
+                                            padding: 1em;
+                                            span {
+                                                display: block;
+                                                width: 8px;
+                                                height: 8px;
+                                                transform: rotate(135deg);
+                                                border-top: 1px solid $text-color;
+                                                border-right: 1px solid $text-color;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .nav-item-contact {
+                            width: 188px;
+                            padding: 0;
+                            margin: 39.5px auto 6px auto;
+                            .button {
+                                padding: 0.8em;
+                            }
+                        }
+                        .nav-item-social {
+                            justify-content: center;
+                            padding-bottom: 0.9em;
+                            margin-bottom: 26px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .main {
+        transform: translateX(320px);
+        transition: all 0.5s;
+    }
+}
+.container {
+    max-width: 1260px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+.show {
+    display: block!important;
+}
+.main {
+    transform: translateX(0);
+    transition: all 0.5s;
+}

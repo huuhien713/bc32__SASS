@@ -1,0 +1,224 @@
+.form {
+    padding-top: 4em;
+    background: url(../img/accent_bottom_wave_01.png) no-repeat bottom;
+    background-size: contain;
+    .content {
+        max-width: 1040px;
+        margin: 0 auto;
+    }
+    .container {
+        padding: 0 20px;
+        .row {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            & > div {
+                padding: 0;
+            }
+        }
+    }
+    .content__left {
+        margin: 4em 0 2em;
+        max-width: 100%;
+        img {
+            display: block;
+            width: 100%;
+            max-height: 526px;
+        }
+    }
+
+    .content__right {
+        padding: 0 20px;
+
+        form {
+            font-size: 15px;
+            line-height: 1.2;
+            border-radius: 10px;
+            box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+            padding: 0 25px;
+            background-color: #fff;
+            .form-header {
+                padding-top: 40px;
+                padding-bottom: 50px;
+
+                h2 {
+                    font-size: 2.5rem;
+                    margin: 0;
+                }
+            }
+
+            .form-body {
+                padding-bottom: 40px;
+
+                .textInput {
+                    display: flex;
+
+                    div:first-child {
+                        padding-right: 15px;
+                    }
+
+                    div {
+                        position: relative;
+                        max-width: 50%;
+                        padding-bottom: 15px;
+
+                        span {
+                            position: absolute;
+                            top: 0.85em;
+                            left: 1em;
+                            color: $primary-color;
+                        }
+
+                        input {
+                            width: 100%;
+                            padding: 0.8em 0.8em 0.8em 2.8em;
+                            border-radius: 30px;
+                            outline-color: #e2e2e2;
+                            border: 1px solid #efefef;
+                        }
+                    }
+                }
+
+                .selectInput {
+                    padding-bottom: 15px;
+
+                    div {
+                        border-radius: 50px;
+                        border: 1px solid #efefef;
+                        padding: 0.8em;
+                        text-align: center;
+
+                        span {
+                            @include d-flex;
+
+                            select {
+                                width: 100%;
+                                border: none;
+                                outline: none;
+
+                                option {
+                                    padding-bottom: 1em;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .textAreaInput {
+                    padding-bottom: 15px;
+
+                    div {
+                        position: relative;
+
+                        textarea {
+                            padding: 0.8rem 0.8rem 0.8rem 2.8rem;
+                            background-color: transparent;
+                            outline-color: #e2e2e2;
+                            border-radius: 20px;
+                            border: 1px solid #efefef;
+                            width: 100%;
+                            height: 90px;
+                        }
+
+                        span {
+                            position: absolute;
+                            top: 1rem;
+                            left: 1rem;
+                            color: $primary-color;
+                        }
+                    }
+                }
+
+                .btn-wrap {
+                    font-size: 0.9rem;
+                    padding-top: 30px;
+                    max-width: 150px;
+                    text-align: center;
+                    line-height: 1.5;
+
+                    span {
+                        visibility: hidden;
+                        display: inline-block;
+                        background-color: #23282d;
+                        opacity: 0.75;
+                        width: 24px;
+                        height: 24px;
+                        border: none;
+                        border-radius: 100%;
+                        padding: 0;
+                        margin: 0 24px;
+                        position: relative;
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            background-color: #fbfbfc;
+                            top: 4px;
+                            left: 4px;
+                            width: 6px;
+                            height: 6px;
+                            border: none;
+                            border-radius: 100%;
+                            transform-origin: 8px 8px;
+                            animation: spin 0.8s infinite linear;
+                        }
+                    }
+                }
+
+                .alert {
+                    display: none;
+                    margin: 2em 0.5em 1em;
+                    padding: 0.2em 1em;
+                    border: 2px solid #00a0d2;
+                }
+            }
+        }
+    }
+}
+
+@keyframes spin {
+    from {
+        top: 1px;
+        left: 9px;
+    }
+    10% {
+        top: 4px;
+        left: 15px;
+    }
+    20% {
+        top: 8px;
+        left: 17px;
+    }
+    30% {
+        top: 13px;
+        left: 17px;
+    }
+    40% {
+        top: 16px;
+        left: 14px;
+    }
+    50% {
+        top: 17px;
+        left: 8px;
+    }
+    60% {
+        top: 16px;
+        left: 5px;
+    }
+    70% {
+        top: 14px;
+        left: 3px;
+    }
+    80% {
+        top: 9px;
+        left: 1px;
+    }
+    90% {
+        top: 4px;
+        left: 3px;
+    }
+    to {
+        top: 1px;
+        left: 7px;
+    }
+}

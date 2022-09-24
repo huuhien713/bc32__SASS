@@ -1,0 +1,37 @@
+.banner {
+    background: url(../img/yellow_top_wave_01.png) no-repeat top,
+        url(../img/Violet_top_left_wave.png) no-repeat bottom;
+    background-size: contain;
+    position: relative;
+    padding: 4em 0;
+    .row {
+        align-items: center;
+        div:last-child {
+            padding: 0;
+        }
+    }
+    &__left {
+        p {
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: $primary-color;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 3.8rem;
+            margin: 0;
+        }
+    }
+
+    &__right {
+        max-width: 580px;
+        max-height: 580px;
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+}
